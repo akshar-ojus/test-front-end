@@ -1,0 +1,308 @@
+.dashboard {
+  max-width: 1400px;
+}
+
+.page-header {
+  margin-bottom: 32px;
+}
+
+.page-header h1 {
+  margin: 0 0 8px 0;
+  font-size: 32px;
+  color: #111827;
+}
+
+.page-subtitle {
+  margin: 0;
+  color: #6b7280;
+  font-size: 16px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.stat-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px !important;
+}
+
+.stat-icon {
+  font-size: 48px;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.stat-primary .stat-icon {
+  background: #eef2ff;
+}
+
+.stat-success .stat-icon {
+  background: #d1fae5;
+}
+
+.stat-info .stat-icon {
+  background: #dbeafe;
+}
+
+.stat-warning .stat-icon {
+  background: #fef3c7;
+}
+
+.stat-content {
+  flex: 1;
+}
+
+.stat-value {
+  font-size: 32px;
+  font-weight: bold;
+  color: #111827;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.stat-detail {
+  font-size: 13px;
+  color: #9ca3af;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.dashboard-section {
+  padding: 24px !important;
+}
+
+.section-title {
+  margin: 0 0 20px 0;
+  font-size: 20px;
+  color: #111827;
+  font-weight: 600;
+}
+
+.tasks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 16px;
+  background: #f9fafb;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.task-item:hover {
+  background: #f3f4f6;
+}
+
+.task-info {
+  flex: 1;
+}
+
+.task-title {
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.task-meta {
+  display: flex;
+  gap: 8px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.badge-high {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.badge-medium {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.badge-low {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.badge-completed {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.badge-in-progress {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.badge-todo {
+  background: #f3f4f6;
+  color: #374151;
+}
+
+.badge-active {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.badge-planning {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.task-date {
+  font-size: 14px;
+  color: #6b7280;
+  white-space: nowrap;
+  margin-left: 16px;
+}
+
+.deadlines-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.deadline-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: #f9fafb;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.deadline-item:hover {
+  background: #f3f4f6;
+}
+
+.deadline-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #6366f1;
+  flex-shrink: 0;
+}
+
+.deadline-info {
+  flex: 1;
+}
+
+.deadline-title {
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.deadline-date {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.quick-actions {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 16px;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+}
+
+.action-btn:hover {
+  border-color: #6366f1;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+}
+
+.action-icon {
+  font-size: 32px;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.action-primary .action-icon {
+  background: #eef2ff;
+}
+
+.action-secondary .action-icon {
+  background: #dbeafe;
+}
+
+.action-tertiary .action-icon {
+  background: #d1fae5;
+}
+
+.action-title {
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 4px;
+}
+
+.action-desc {
+  font-size: 14px;
+  color: #6b7280;
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .quick-actions {
+    grid-template-columns: 1fr;
+  }
+}
