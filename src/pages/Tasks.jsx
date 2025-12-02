@@ -13,6 +13,8 @@ export default function Tasks() {
   const [tasks, setTasks] = useState([]);
   const [projects, setProjects] = useState([]);
   const [teamMembers, setTeamMembers] = useState([]);
+  const [statusOptions, setStatusOptions] = useState([]);
+  const [priorityOptions, setPriorityOptions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingTask, setEditingTask] = useState(null);
@@ -33,7 +35,17 @@ export default function Tasks() {
 
   useEffect(() => {
     loadData();
+    loadDropdownOptions();
   }, []);
+
+  const loadDropdownOptions = async () => {
+    const [statuses, priorities] = await Promise.all([
+      api.getTaskStatuses(),
+      api.getPriorities()
+    ]);
+    setStatusOptions(statuses);
+    setPriorityOptions(priorities);
+  };
 
   useEffect(() => {
     loadTasks();
@@ -138,18 +150,6 @@ export default function Tasks() {
     const member = teamMembers.find(m => m.id === assignedTo);
     return member ? member.name : 'Unassigned';
   };
-
-  const statusOptions = [
-    { value: 'todo', label: 'To Do' },
-    { value: 'in-progress', label: 'In Progress' },
-    { value: 'completed', label: 'Completed' }
-  ];
-
-  const priorityOptions = [
-    { value: 'low', label: 'Low' },
-    { value: 'medium', label: 'Medium' },
-    { value: 'high', label: 'High' }
-  ];
 
   if (loading) {
     return <Loading fullPage />;

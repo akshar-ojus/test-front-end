@@ -11,6 +11,7 @@ import './Projects.css';
 
 export default function Projects() {
   const [projects, setProjects] = useState([]);
+  const [statusOptions, setStatusOptions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingProject, setEditingProject] = useState(null);
@@ -25,7 +26,13 @@ export default function Projects() {
 
   useEffect(() => {
     loadProjects();
+    loadStatusOptions();
   }, []);
+
+  const loadStatusOptions = async () => {
+    const data = await api.getProjectStatuses();
+    setStatusOptions(data);
+  };
 
   const loadProjects = async () => {
     try {
@@ -94,13 +101,6 @@ export default function Projects() {
       }
     }
   };
-
-  const statusOptions = [
-    { value: 'planning', label: 'Planning' },
-    { value: 'active', label: 'Active' },
-    { value: 'on-hold', label: 'On Hold' },
-    { value: 'completed', label: 'Completed' }
-  ];
 
   if (loading) {
     return <Loading fullPage />;

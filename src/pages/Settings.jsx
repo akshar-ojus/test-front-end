@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { api } from '../services/api';
 import Card from '../components/Card';
 import Button from '../components/Button';
 import Input from '../components/Input';
@@ -20,7 +21,29 @@ export default function Settings() {
     notifications: 'all'
   });
 
+  const [themeOptions, setThemeOptions] = useState([]);
+  const [languageOptions, setLanguageOptions] = useState([]);
+  const [timezoneOptions, setTimezoneOptions] = useState([]);
+  const [notificationOptions, setNotificationOptions] = useState([]);
+
   const [saved, setSaved] = useState(false);
+
+  useEffect(() => {
+    loadDropdownOptions();
+  }, []);
+
+  const loadDropdownOptions = async () => {
+    const [themes, languages, timezones, notifications] = await Promise.all([
+      api.getThemes(),
+      api.getLanguages(),
+      api.getTimezones(),
+      api.getNotificationOptions()
+    ]);
+    setThemeOptions(themes);
+    setLanguageOptions(languages);
+    setTimezoneOptions(timezones);
+    setNotificationOptions(notifications);
+  };
 
   const handleProfileSubmit = (e) => {
     e.preventDefault();
@@ -33,32 +56,6 @@ export default function Settings() {
     setSaved(true);
     setTimeout(() => setSaved(false), 3000);
   };
-
-  const themeOptions = [
-    { value: 'light', label: 'Light' },
-    { value: 'dark', label: 'Dark' },
-    { value: 'auto', label: 'Auto' }
-  ];
-
-  const languageOptions = [
-    { value: 'en', label: 'English' },
-    { value: 'es', label: 'Spanish' },
-    { value: 'fr', label: 'French' },
-    { value: 'de', label: 'German' }
-  ];
-
-  const timezoneOptions = [
-    { value: 'UTC', label: 'UTC' },
-    { value: 'EST', label: 'Eastern Time' },
-    { value: 'PST', label: 'Pacific Time' },
-    { value: 'GMT', label: 'GMT' }
-  ];
-
-  const notificationOptions = [
-    { value: 'all', label: 'All Notifications' },
-    { value: 'important', label: 'Important Only' },
-    { value: 'none', label: 'None' }
-  ];
 
   return (
     <div className="settings">

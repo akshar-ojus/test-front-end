@@ -10,6 +10,8 @@ import './Team.css';
 
 export default function Team() {
   const [teamMembers, setTeamMembers] = useState([]);
+  const [statusOptions, setStatusOptions] = useState([]);
+  const [avatarOptions, setAvatarOptions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingMember, setEditingMember] = useState(null);
@@ -23,7 +25,17 @@ export default function Team() {
 
   useEffect(() => {
     loadTeamMembers();
+    loadDropdownOptions();
   }, []);
+
+  const loadDropdownOptions = async () => {
+    const [statuses, avatars] = await Promise.all([
+      api.getTeamStatuses(),
+      api.getAvatars()
+    ]);
+    setStatusOptions(statuses);
+    setAvatarOptions(avatars);
+  };
 
   const loadTeamMembers = async () => {
     try {
@@ -90,23 +102,6 @@ export default function Team() {
       }
     }
   };
-
-  const statusOptions = [
-    { value: 'active', label: 'Active' },
-    { value: 'on-leave', label: 'On Leave' },
-    { value: 'inactive', label: 'Inactive' }
-  ];
-
-  const avatarOptions = [
-    { value: '👤', label: '👤 Default' },
-    { value: '👩‍💻', label: '👩‍💻 Developer' },
-    { value: '👨‍💻', label: '👨‍💻 Developer' },
-    { value: '👩‍🔬', label: '👩‍🔬 Scientist' },
-    { value: '👨‍🎨', label: '👨‍🎨 Designer' },
-    { value: '👩‍💼', label: '👩‍💼 Manager' },
-    { value: '👨‍💼', label: '👨‍💼 Manager' },
-    { value: '🧑‍💻', label: '🧑‍💻 Programmer' }
-  ];
 
   if (loading) {
     return <Loading fullPage />;

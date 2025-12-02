@@ -135,4 +135,55 @@ export const api = {
     const response = await fetch(`${API_BASE_URL}/dashboard`);
     return handleResponse(response);
   },
+
+  // Metadata endpoints for dropdown options
+  getTaskStatuses: async () => {
+    const response = await fetch(`${API_BASE_URL}/metadata/task-statuses`);
+    return handleResponse(response);
+  },
+
+  getPriorities: async () => {
+    const response = await fetch(`${API_BASE_URL}/metadata/priorities`);
+    return handleResponse(response);
+  },
+
+  getProjectStatuses: async () => {
+    const response = await fetch(`${API_BASE_URL}/metadata/project-statuses`);
+    return handleResponse(response);
+  },
+
+  getTeamStatuses: async () => {
+    const response = await fetch(`${API_BASE_URL}/metadata/team-statuses`);
+    return handleResponse(response);
+  },
+
+  getAvatars: async () => {
+    const response = await fetch(`${API_BASE_URL}/metadata/avatars`);
+    return handleResponse(response);
+  },
+
+  getRoles: async () => {
+    const response = await fetch(`${API_BASE_URL}/metadata/roles`);
+    return handleResponse(response);
+  },
+
+  getThemes: async () => {
+    const response = await fetch(`${API_BASE_URL}/metadata/themes`);
+    return handleResponse(response);
+  },
+
+  getLanguages: async () => {
+    const response = await fetch(`${API_BASE_URL}/metadata/languages`);
+    return handleResponse(response);
+  },
+
+  getTimezones: async () => {
+    const response = await fetch(`${API_BASE_URL}/metadata/timezones`);
+    return handleResponse(response);
+  },
+
+  getNotificationOptions: async () => {
+    const response = await fetch(`${API_BASE_URL}/metadata/notification-options`);
+    return handleResponse(response);
+  },
 };
