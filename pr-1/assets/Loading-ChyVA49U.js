@@ -1,0 +1,1 @@
+import{j as s}from"./client-_syZrnq6.js";/* empty css               */function o({size:i="medium",fullPage:e=!1}){const n=s.jsx("div",{className:`spinner spinner-${i}`});return e?s.jsx("div",{className:"loading-fullpage",children:n}):n}export{o as L};

@@ -1,0 +1,1 @@
+import{j as t}from"./client-_syZrnq6.js";/* empty css               */function d({children:a,className:s="",onClick:r,hover:e=!1}){return t.jsx("div",{className:`card ${s} ${e?"card-hover":""} ${r?"card-clickable":""}`,onClick:r,children:a})}export{d as C};
