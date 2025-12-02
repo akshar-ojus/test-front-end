@@ -1,4 +1,5 @@
 // src/App.jsx
+// A simple React component demonstrating state management and JSX structure
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
