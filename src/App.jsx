@@ -1,5 +1,4 @@
 // src/App.jsx
-// A simple React component demonstrating state management and JSX structure
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Dashboard from './pages/Dashboard';
