@@ -7,6 +7,7 @@ import Tasks from './pages/Tasks';
 import Team from './pages/Team';
 import Analytics from './pages/Analytics';
 import Settings from './pages/Settings';
+import Profile from './pages/Profile';
 import './App.css';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
           <Route path="team" element={<Team />} />
           <Route path="analytics" element={<Analytics />} />
           <Route path="settings" element={<Settings />} />
+          <Route path="profile/:userId" element={<Profile />} />
         </Route>
       </Routes>
     </BrowserRouter>

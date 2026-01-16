@@ -34,6 +34,10 @@ export default function Layout() {
             <span className="nav-icon">⚙️</span>
             Settings
           </NavLink>
+          <NavLink to="/profile/1" className={({ isActive }) => isActive ? 'nav-item active' : 'nav-item'}>
+            <span className="nav-icon">👤</span>
+            Profile
+          </NavLink>
         </nav>
       </aside>
       <main className="main-content">

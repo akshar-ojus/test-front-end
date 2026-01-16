@@ -186,4 +186,39 @@ export const api = {
     const response = await fetch(`${API_BASE_URL}/metadata/notification-options`);
     return handleResponse(response);
   },
+
+  // User Profile
+  getUserProfile: async (userId) => {
+    const response = await fetch(`${API_BASE_URL}/users/${userId}/profile`);
+    return handleResponse(response);
+  },
+
+  getUserTasks: async (userId) => {
+    const response = await fetch(`${API_BASE_URL}/users/${userId}/tasks`);
+    return handleResponse(response);
+  },
+
+  getUserProjects: async (userId) => {
+    const response = await fetch(`${API_BASE_URL}/users/${userId}/projects`);
+    return handleResponse(response);
+  },
+
+  getUserActivity: async (userId) => {
+    const response = await fetch(`${API_BASE_URL}/users/${userId}/activity`);
+    return handleResponse(response);
+  },
+
+  getUserStats: async (userId) => {
+    const response = await fetch(`${API_BASE_URL}/users/${userId}/stats`);
+    return handleResponse(response);
+  },
+
+  updateUserProfile: async (userId, profileData) => {
+    const response = await fetch(`${API_BASE_URL}/users/${userId}/profile`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(profileData),
+    });
+    return handleResponse(response);
+  },
 };
