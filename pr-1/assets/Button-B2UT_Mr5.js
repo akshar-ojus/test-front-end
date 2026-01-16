@@ -1,0 +1,1 @@
+import{j as a}from"./client-_syZrnq6.js";/* empty css               */function i({children:t,onClick:n,variant:o="primary",size:r="medium",disabled:s=!1,type:m="button",fullWidth:u=!1}){return a.jsx("button",{type:m,className:`btn btn-${o} btn-${r} ${u?"btn-full":""}`,onClick:n,disabled:s,children:t})}export{i as B};
