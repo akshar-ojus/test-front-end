@@ -1,3 +1,4 @@
+// src/components/Layout.jsx
 import { NavLink, Outlet } from 'react-router-dom';
 import './Layout.css';
 
