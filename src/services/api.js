@@ -1,5 +1,5 @@
-// API Service - Makes real HTTP calls to backend endpoints
-// No simulated data, no fallbacks - just API calls
+// API Service - Makes real HTTP calls to backend endpoints.
+// No simulated data, no fallbacks - just API calls.
 
 const API_BASE_URL = 'https://api.taskhub-backend.com/v1';
 
