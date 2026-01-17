@@ -1,4 +1,4 @@
-name: MockMirror Preview
+name: AI Frontend Previewer
 on:
   pull_request:
     types: [opened, synchronize, reopened]
@@ -13,9 +13,9 @@ jobs:
         uses: actions/checkout@v3
         with:
           fetch-depth: 0 # Important for detecting changes
-      - name: Run MockMirror
+      - name: Run AI Frontend Previewer
         # Note: Replace your-username/ai-previewer with your actual repository name
-        uses: akshar-ojus/mockmirror@v1
+        uses: akshar-ojus/ai-frontend-previewer@v1
         with:
           gemini_api_key: ${{ secrets.GEMINI_API_KEY }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
