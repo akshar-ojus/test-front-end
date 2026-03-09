@@ -1,4 +1,3 @@
-// Select.jsx
 import './Select.css';
 
 export default function Select({ 
