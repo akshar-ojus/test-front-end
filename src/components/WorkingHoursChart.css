@@ -1,0 +1,137 @@
+/* WorkingHoursChart.css */
+
+.working-hours-chart {
+  /* The parent Card component provides background, border-radius, shadow, and padding */
+}
+
+/* ── Header row ─────────────────────────────────────── */
+.whc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.whc-title-block {
+  min-width: 0;
+}
+
+/* ── Control strip ───────────────────────────────────── */
+.whc-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  flex-shrink: 0;
+}
+
+.whc-control-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.whc-label {
+  font-size: 11px;
+  font-weight: 700;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+/* ── Pill-button toggle group ─────────────────────────── */
+.whc-toggle {
+  display: flex;
+  background: #f3f4f6;
+  border-radius: 8px;
+  padding: 3px;
+  gap: 2px;
+}
+
+.whc-btn {
+  padding: 5px 11px;
+  border: none;
+  background: transparent;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #6b7280;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+  white-space: nowrap;
+  line-height: 1.4;
+}
+
+.whc-btn:hover:not(.whc-btn--active) {
+  background: rgba(255, 255, 255, 0.8);
+  color: #374151;
+}
+
+.whc-btn--active {
+  background: #ffffff;
+  color: #6366f1;
+  font-weight: 600;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.10);
+}
+
+/* ── Tooltip styles injected via ECharts HTML formatter ─ */
+.whc-tt-date {
+  font-size: 12px;
+  font-weight: 600;
+  color: #6b7280;
+  margin-bottom: 6px;
+}
+
+.whc-tt-row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 3px 0;
+  font-size: 13px;
+}
+
+.whc-tt-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.whc-tt-name {
+  flex: 1;
+  color: #374151;
+}
+
+.whc-tt-val {
+  color: #111827;
+  margin-left: 12px;
+}
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 900px) {
+  .whc-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .whc-controls {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .whc-toggle {
+    flex-wrap: wrap;
+  }
+
+  .whc-btn {
+    padding: 4px 8px;
+    font-size: 12px;
+  }
+}

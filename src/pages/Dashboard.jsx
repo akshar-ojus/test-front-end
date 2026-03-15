@@ -1,3 +1,4 @@
+// Dashboard.jsx --- Main dashboard page showing project stats, recent tasks, and upcoming deadlines
 import { useState, useEffect } from 'react';
 import { api } from '../services/api';
 import Card from '../components/Card';
