@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import { api } from '../services/api';
 import Card from '../components/Card';
 import Loading from '../components/Loading';
+import WorkingHoursChart from '../components/WorkingHoursChart';
+import ProjectNetworkChart from '../components/ProjectNetworkChart';
 import './Analytics.css';
 
 export default function Analytics() {
@@ -129,6 +131,14 @@ export default function Analytics() {
           </div>
         </Card>
       </div>
+
+      <Card className="chart-card">
+        <WorkingHoursChart employees={teamProductivity.map(m => m.name)} />
+      </Card>
+
+      <Card className="chart-card">
+        <ProjectNetworkChart teamProductivity={teamProductivity} projectStats={projectStats} />
+      </Card>
 
       <Card className="chart-card">
         <h2 className="chart-title">Team Productivity</h2>
